@@ -1,0 +1,36 @@
+UPF DG Sizing Program by Analytic Method for a single load value
+
+
+UPFDG.c is the main C file. (UPFDG - Unity power factor DG sizing)
+
+In order the get the different test system output, we have to change the data in Offline.txt file
+
+xx - 33 or 69 bus distribution system
+zz - 96 or 5 load level (96 - from IEEE paper, 5-Approximate Load level)
+Depends on the load level we have to change the hrs in main program
+
+*********************************************
+Where to change in Offline.txt file
+
+busxx.dat / xx_aDG.dat		-- xx represent the bus data, a represents  DG number.
+1Ybus.txt		-|
+2Volt.txt		 | -- Intermediate steps to cross check or verify
+3Jaco.txt		 |
+4Inv.txt		-|
+xxLagDGa.out		-- xx represent the bus data, a represent 1, 2 number of DGs
+IEEERTS.dat/ LDData.dat		-- Select 96/5 (any one as load level)	
+Price.dat			-- Price Details For every hour 
+*********************************************
+
+To run this program in linux
+
+gcc -o anyname LF.c -lm
+./anyname
+
+
+To run this program in windows 
+
+gcc -o anyname LF.c
+anyname
+
+Still have to find the price details of 5 load level
